@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.jay.mapper.LoginMapper">
+
+	<select id="findID" parameterType="org.jay.domain.UserDTO" resultType="String">
+		SELECT
+			userid
+		FROM
+			user_tbl
+		WHERE
+			username=#{username} and email=#{email}
+	</select>
+	
+	<update id="updatePW">
+		UPDATE
+			user_tbl
+		SET
+			userpw=#{userpw}
+		WHERE
+			userid=#{userid}
+	</update>
+</mapper>

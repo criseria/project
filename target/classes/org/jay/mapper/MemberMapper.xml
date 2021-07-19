@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.jay.mapper.MemberMapper">
+	<!-- 회원가입 추가 -->
+	<insert id="insertMember">
+		INSERT ALL
+    	INTO user_tbl (
+			userid, userpw, username, email, addr, addr_detail, phone, interest, postcode		
+		) VALUES (
+		#{userid},		
+		#{userpw},		
+		#{username},		
+		#{email},		
+		#{addr},		
+		#{addr_detail},		
+		#{phone},		
+		#{interest},
+		#{postcode}
+		)
+    INTO auth_tbl VALUES (
+    	#{userid}, 
+    	'role_user'
+    	)
+    SELECT * FROM dual
+	</insert>
+	
+	<!-- 아이디 중복 체크 -->
+	<select id="idChk" resultType="int">
+	SELECT COUNT(*) FROM user_tbl
+	WHERE USERID = #{userid}
+	</select>
+	
+	<!-- 비밀번호 확인 체크 -->
+	<select id="pwChk" resultType="int">
+	SELECT COUNT(*) FROM user_tbl
+	WHERE userpw = #{userpw}
+	</select>
+	
+	<select id="readMember" parameterType="String" resultType="org.jay.domain.UserDTO">
+		select * from user_tbl
+		where userid = #{userid}
+	</select>
+	
+	<update id="usermodify">
+		UPDATE 
+			user_tbl 
+		SET
+ 		<!--  userpw=#{userpw}, -->
+		 username=#{username},
+		 email=#{email},
+		 phone=#{phone},
+		 postcode=#{postcode},
+		 addr=#{addr},
+		 addr_detail=#{addr_detail},
+		 interest=#{interest}
+		where userid=#{userid}
+	</update>
+	
+	<delete id="deleteAuth">
+		delete from auth_tbl where userid = #{userid}
+	</delete>
+	
+	<delete id="deleteMember">
+		DELETE FROM user_tbl 
+			WHERE 
+		userid=#{userid}
+	</delete>
+	
+	<update id="pwmodify">
+		UPDATE 
+			user_tbl 
+		SET
+ 		  userpw=#{userpw1}
+		where userid=#{userid}
+	</update>
+
+</mapper>
