@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="customUserDetailService" class="org.jay.security.CustomUserDetailService"></bean>
+<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+
+<!-- 웹브라우저 기준에서 security가 실행되는 과정을 담당 -->
+<!-- 각각의 url에 대해 접근 권한을 체크해서 url 접근을 허용할지 안할지를 결정해주는 구문 -->
+<security:http auto-config="true" use-expressions="true">
+	<security:form-login login-page="/login/customLogin"/>
+	<security:logout logout-url="/logout" logout-success-url="/main" invalidate-session="true" delete-cookies="remember-me"/>
+	<!-- <security:remember-me data-source-ref="dataSource" token-validity-seconds="259200"/> -->	<!-- 3일간 기억 / 리멤버미를 지우니까 로그아웃 처리됨-->
+	<security:csrf disabled="true"/>
+</security:http>
+
+<!-- 인증 관련 담당 -->
+<security:authentication-manager>
+	<security:authentication-provider user-service-ref="customUserDetailService">
+		<security:password-encoder ref="bcryptPasswordEncoder"/>	
+	</security:authentication-provider>
+</security:authentication-manager>
+
+</beans>

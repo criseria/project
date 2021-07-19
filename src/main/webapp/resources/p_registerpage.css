@@ -1,0 +1,113 @@
+@charset "UTF-8";
+.ac-sub-go-top{
+  width: 60px;
+  height: 60px;
+  bottom:calc(10% - 35px);
+  position: fixed;
+  right: calc((100% - 1250px)/ 2 - 80px);
+  display: inline-block;
+  background: white url(/resources/icon/go-top.png) no-repeat 50% 50%; 
+  text-indent: -9999px;
+  border: none;
+  background-size: 100%;
+  display: none;
+}
+.textbox{
+	font-size : 15px;
+	resize : none;
+	width:100%;
+	height:300;
+	overflow:visible;
+	text-overflow:ellipsis;
+}
+.register-all{
+	border: 1px solid black;
+	border-radius : 2px;	
+	width:75%;
+	position: relative;
+	left: 12%;
+}
+.register-content{
+	border-bottom: 1px solid black;
+	height: 30px;
+}
+.register-cate{
+	background-color : #EEE;
+	font-weight : bold;
+	border-right: 1px solid black;
+	padding: 4px 71px 4.8px 79px;
+	position: relative;
+	top: 4px;
+}
+.register-title{
+	background-color : #EEE;
+	font-weight : bold;
+	border-right: 1px solid black;
+	padding: 4px 66px 4px 78.5px;
+	position: relative;
+	top: 4px;
+}
+.register-price{
+	background-color : #EEE;
+	font-weight : bold;
+	border-right: 1px solid black;
+	padding: 4px 85px 4.6px 97px;
+	position: relative;
+	top: 4px;
+}
+.register-p-img{
+	background-color : #EEE;
+	font-weight : bold;
+	border-right: 1px solid black;
+	padding: 4px 41px 4.8px 50px;
+	position: relative;
+	top: 4px;
+}
+button.save-btn{
+	position: relative;
+	left: 54%;
+	line-height: 40px;
+	width: 177px;
+	height: 42px;
+	border: 1px solid #a384ff;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	background-color: white;
+	color: a384ff;
+	margin: 10px 0px 0px 0px;
+	cursor: pointer;
+}
+button.save-btn:hover{
+	background-color: #6D57AE;
+	color: white;
+}
+button.list-btn{
+	position: relative;
+	left: 54.5%;
+	line-height: 40px;
+	width: 177px;
+	height: 42px;
+	border: 1px solid #6ec5ff;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	background-color: white;
+	color: #6ec5ff;
+	margin: 10px 0px 0px 0px;
+	cursor: pointer;
+}
+button.list-btn:hover{
+	color: white;
+	background-color: #58A4D7;
+}
+input:focus{
+	outline: none;
+}
+textarea.textbox{
+	border-right: none;
+	border-left: none;
+}
+textarea.textbox:focus{
+	outline:none;
+}

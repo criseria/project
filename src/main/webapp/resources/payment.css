@@ -1,0 +1,191 @@
+@charset "UTF-8";
+.container{
+		width: 1100px;
+	}
+	h1{
+		float: left;
+		margin: 0 auto;
+		padding: 10px;
+	}
+	.depth{
+		float: right;
+		margin-top: 20px;
+	}
+	.buyerInfo{
+		padding-top: 10px;
+		padding-bottom: 5px;
+	}
+	th{
+		width: 150px;
+		height: 30px;
+		text-align: left;
+		background-color: #f4f4f4;
+	}
+	td{
+		border-collapse: collapse;
+	}
+	td input{
+		background : #fcfcfc;
+		border-radius : 5px;
+		width: 500px;
+		height: 30px;
+		padding: 0px;
+		border: none;
+	}
+td input:focus{
+	outline: none;
+}
+	.prodTbl th{
+		text-align: center;
+		font-size: 18px;
+	}
+	.prodTbl td{
+		text-align: center;
+	}
+	.kakaoPay{
+		font-size: 15px;
+	}
+	.kakaoPay input{
+		width: 50px;
+		height: 20px;
+	}
+.table1 tr {
+	border: 1px solid #e4e4e4;
+}
+.table1 th{
+	width: 104px;
+	border : solid #e4e4e4;
+	border-width: 0 1px 1px 0;
+	padding: 7px 10px 7px 15px;
+	font-weight: 700;
+	text-align: right;
+}
+.table1 {
+	border-top: 2px solid #cecece;
+	border-bottom : 2px solid #cecece;
+	width: 100%
+}
+.table1 td {
+	border-bottom: 1px solid #e4e4e4;
+	padding : 10px 16px;
+	
+}
+.table2{
+	border-top: 2px solid #cecece;
+	border-bottom : 2px solid #cecece;
+	width: 100%
+}
+.table2 tr {
+	border: 1px solid #e4e4e4;
+}
+.table2 th{
+	width: 104px;
+	border : solid #e4e4e4;
+	border-width: 0 1px 1px 0;
+	padding: 7px 10px 7px 15px;
+	font-weight: 700;
+	text-align: right;
+}
+.table2 td {
+	border-bottom: 1px solid #e4e4e4;
+	padding : 10px 16px;
+}
+.table3{
+	border-top: 2px solid #cecece;
+	border-bottom : 2px solid #cecece;
+	width: 100%
+}
+.table3 tr {
+	border: 1px solid #e4e4e4;
+}
+.table3 th{
+	width: 104px;
+	border : solid #e4e4e4;
+	border-width: 0 1px 1px 0;
+	padding: 7px 10px 7px 15px;
+	font-weight: 700;
+	text-align: right;
+}
+.table3 td {
+	border-bottom: 1px solid #e4e4e4;
+	padding : 10px 16px;
+}
+button.btn.btn-default{
+	position: relative;
+	left:-49%;
+	padding: 4px 8px;
+	border: 1px solid #999;
+	color: #333;
+	border-radius: 2px;
+	box-shadow: 0 -2px 0 rgb(0 0 0 / 10%) inset;
+	font-size: 11px;
+	background-color: white;
+}
+button.recipientInfo{
+	position: relative;
+	top: -10px;
+	left : -4%;
+	padding: 4px 8px;
+	border: 1px solid #999;
+	color: #333;
+	border-radius: 2px;
+	box-shadow: 0 -2px 0 rgb(0 0 0 / 10%) inset;
+	font-size: 11px;
+	background-color: white;
+}
+button.userInfo{
+	position: relative;
+	top: -4px;
+	left : -4%;
+	padding: 4px 8px;
+	border: 1px solid #999;
+	color: #333;
+	border-radius: 2px;
+	box-shadow: 0 -2px 0 rgb(0 0 0 / 10%) inset;
+	font-size: 11px;
+	background-color: white;
+}
+td.kakaoPay{
+	border :none;
+}
+.img {
+	width: 300px;
+	text-align: center;
+}
+.title{
+	width: 400px;
+	text-align: center;
+}
+.price{
+	width: 200px;
+	text-align: center;
+}
+.purchase-count{
+	width: 200px;
+	text-align: center;
+}
+.prodTbl{
+	height: 80px;
+	font-size: 18px;
+	font-weight: bold;
+	background: #f5f5f5;
+}
+.prodTbl2{
+	width: 100%;
+}
+.img1 {
+	width: 300px;
+	text-align: center;
+}
+.title1{
+	width: 400px;
+	text-align: center;
+}
+.price1{
+	width: 200px;
+	text-align: center;
+}
+.purchase-count1{
+	width: 200px;
+	text-align: center;
+}
