@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jay.mapper.TourPickMapper">
+	
+	<insert id="pickInsert">
+		insert into tour_pick(pick_no, userid, tou_no, checkpick)
+		values(seq_pick.nextval, #{userid}, #{tou_no}, 1)
+	</insert>
+	
+	<select id="getPick" resultType="org.jay.domain.TourPickDTO">
+		SELECT * FROM tour_pick where tou_no = #{tou_no} and userid = #{userid}
+	</select>
+	
+	<delete id="pickDelete">
+		delete from tour_pick where tou_no = #{tou_no} and userid = #{userid}
+	</delete>
+
+</mapper>

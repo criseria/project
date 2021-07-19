@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="org.jay.mapper.ProductReplyMapper">
+	<insert id="insert" parameterType="org.jay.domain.ProductReplyDTO">
+		insert into product_reply(rno, pno, reply, replyer)
+		values(seq_product_reply.nextval, #{pno}, #{reply}, #{replyer})
+	</insert>
+	
+	<select id="read" resultType="org.jay.domain.ProductReplyDTO">
+		select * from product_reply where rno=#{rno}
+	</select>
+	
+	<delete id="delete">
+		delete from product_reply where rno=#{rno}
+	</delete>
+	
+	<delete id="removeAll">
+		delete from product_reply where pno=#{pno}
+	</delete>
+	
+	<update id="update">
+		update product_reply 
+		set
+			reply=#{reply},
+			updatedate=sysdate
+		where
+			rno=#{rno} 
+	</update>
+	
+	<select id="getListWithPaging" resultType="org.jay.domain.ProductReplyDTO">
+		select * from product_reply where pno=#{pno} order by rno
+	</select>
+	
+	
+	<!-- 별점 insert -->
+	<insert id="insertRating" parameterType="org.jay.domain.StarRatingDTO">
+		insert into star_rating values(#{pno}, #{score}, #{userid})
+	</insert>
+	
+	<!-- 상품 리뷰의 별점 합산 -->
+	<select id="totalScore" parameterType="Long" resultType="int">
+		select sum(score) from star_rating where pno = #{pno}
+	</select>
+	
+	<!-- 댓글 작성자가 매긴 별점 구해오기 -->
+	<select id="userScore" parameterType="org.jay.domain.StarRatingDTO" resultType="int">
+		select score from star_rating where pno = #{pno} and userid = #{userid}
+	</select>
+	
+	
+</mapper>
